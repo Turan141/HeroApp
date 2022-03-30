@@ -1,0 +1,44 @@
+.navigationDiv {
+  color: white;
+  width: 100%;
+  background-color: black;
+  height: 100px;
+  box-shadow: 0px 5px 5px rgb(83, 82, 82);
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  color: aliceblue;
+  justify-content: start;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: start;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.nav ul li {
+  justify-content: start;
+  margin: 10px;
+  padding: 15px;
+  text-decoration: none;
+  list-style: none;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.nav ul li:hover {
+  background-color: rgb(145, 5, 5);
+  cursor: pointer;
+}
+
+.welcome {
+  justify-content: end;
+  font-size: 30px;
+  text-decoration: dashed;
+  margin-right: 20px;
+  padding-right: 20px;
+}
