@@ -2,43 +2,60 @@
   color: white;
   width: 100%;
   background-color: black;
+  top: 50px;
   height: 100px;
-  box-shadow: 0px 5px 5px rgb(83, 82, 82);
+  box-shadow: 0px 7px 10px rgb(83, 82, 82);
   display: flex;
   justify-content: space-between;
+  color: white;
+  position: sticky;
 }
 
-.nav {
-  color: aliceblue;
-  justify-content: start;
+.forsticky {
+  height: 200px;
 }
 
-.nav ul {
+.menu_sections {
   display: flex;
-  justify-content: start;
-  margin-top: 10px;
-  margin-left: 15px;
+  justify-content: center;
 }
 
-.nav ul li {
-  justify-content: start;
-  margin: 10px;
-  padding: 15px;
-  text-decoration: none;
-  list-style: none;
-  border: 2px solid white;
-  border-radius: 10px;
+.menu_sections ul {
+  display: flex;
+  margin-top: 32px;
 }
 
-.nav ul li:hover {
-  background-color: rgb(145, 5, 5);
-  cursor: pointer;
+.menu_sections ul a {
+  display: flex;
+  font-size: 1.6rem;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
-.welcome {
-  justify-content: end;
-  font-size: 30px;
-  text-decoration: dashed;
-  margin-right: 20px;
-  padding-right: 20px;
+.menu_sections h1 {
+  margin-top: 0px;
+  font-size: 4rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.element {
+  margin: 23px 50px;
+  padding: 0 20px;
+  border: 1px solid red;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .navigationDiv {
+    background-color: lightblue;
+    width: 1150px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .navigationDiv {
+    background-color: aqua;
+    width: 1150px;
+  }
 }

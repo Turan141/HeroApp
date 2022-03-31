@@ -4,10 +4,9 @@ import styles from '../styles/Home.module.css'
 import { HeaderNav } from '../components/header-navigation'
 
 const Home = ({ heroes }) => {
-  console.log(heroes)
   return (
     <>
-      <HeaderNav />
+      <h1>index</h1>
     </>
   )
 }
