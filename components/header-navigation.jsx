@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import HeaderLogin from './header-login'
 import styles from '../styles/HeaderNav.module.css'
 import Link from 'next/link'
 export const HeaderNav = () => {
@@ -17,7 +19,7 @@ export const HeaderNav = () => {
                 <a>About</a>
               </Link>
             </ul>
-            <h1>Logo</h1>
+            <Image src="/vectorpaint.svg" height={50} width={100} />
             <ul>
               <Link href="/shop">
                 <a>Shop</a>
@@ -28,7 +30,7 @@ export const HeaderNav = () => {
             </ul>
           </div>
           <div className={styles.element}>
-            <h1>Login</h1>
+            <HeaderLogin />
           </div>
         </div>
       </div>
