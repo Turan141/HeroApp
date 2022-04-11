@@ -1,0 +1,70 @@
+.header {
+	box-shadow: 0px 0px 15px 2px black;
+	@apply flex justify-around h-12 gap-4 drop-shadow-2xl;
+}
+
+.burger {
+	@apply flex;
+}
+
+//BURGERBEGIN
+.header__burger_hidden {
+	@apply underline top-12 w-full h-0 left-0 fixed ease-out duration-200;
+
+	li > a {
+		@apply underline  hidden  ease-in-out  duration-300;
+	}
+}
+
+.header__burger_visible {
+	@apply underline leading-6 fixed inline-block top-12 w-full h-28 left-0 px-5 ease-out duration-200;
+	li {
+		@apply flex;
+	}
+	a {
+		@apply my-0.5 underline inline-block mx-auto hover:cursor-pointer font-bold align-middle;
+	}
+}
+// BURGEREND
+
+//LOGINBEGIN
+.header__login_hidden {
+	@apply underline top-12 w-full h-0 left-0 fixed ease-out duration-200;
+	label {
+		@apply hidden;
+	}
+	input {
+		@apply hidden;
+	}
+}
+
+.header__login_visible {
+	@apply main leading-6 fixed inline-block top-12 w-full h-48 left-0 px-5 ease-out duration-200;
+	form {
+		@apply flex flex-col;
+		label {
+			@apply mx-auto;
+		}
+		input {
+			@apply p-1 my-1 w-40 mx-auto rounded-sm;
+		}
+
+		.login__form_sumbit {
+			@apply border-2 hover:cursor-pointer rounded-md;
+		}
+	}
+}
+
+//LOGINEND
+
+.header__form_desktop {
+	@apply hidden md:flex;
+}
+
+.header__desktop_ul {
+	@apply hidden md:flex;
+}
+
+.header__logo {
+	@apply block;
+}
