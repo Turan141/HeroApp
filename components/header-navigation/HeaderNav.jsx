@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { BurgerMenu } from "./BurgerMenu"
 import { InputForm } from "./InputForm"
+import { BurgerIcon } from "./BurgerIcon"
 
 import style from "./HeaderNav.module.scss"
 import Image from "next/image"
@@ -22,6 +23,7 @@ export const HeaderNav = () => {
 	return (
 		<>
 			<div className={style.header}>
+				<BurgerIcon />
 				<Image
 					onClick={() => {
 						setBurgerOpen((isBurgerOpen) => !isBurgerOpen)
