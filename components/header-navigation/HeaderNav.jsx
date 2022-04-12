@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { BurgerMenu } from "./BurgerMenu"
+import { InputForm } from "./InputForm"
+
 import style from "./HeaderNav.module.scss"
 import Image from "next/image"
 import logo from "../../public/vectorpaint.svg"
@@ -8,13 +10,9 @@ import account from "../../public/account.png"
 
 export const UserMenu = () => {
 	return (
-		<form>
-			<label>Login</label>
-			<input type='text' />
-			<label>Password</label>
-			<input type='password' />
-			<input className={style.login__form_sumbit} type='submit' />
-		</form>
+		<>
+			<InputForm />
+		</>
 	)
 }
 
