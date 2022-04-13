@@ -6,7 +6,6 @@ import { BurgerIcon } from "./BurgerIcon"
 import style from "./HeaderNav.module.scss"
 import Image from "next/image"
 import logo from "../../public/vectorpaint.svg"
-import burgerIcon from "../../public/list.png"
 import account from "../../public/account.png"
 
 export const UserMenu = () => {
@@ -20,27 +19,29 @@ export const UserMenu = () => {
 export const HeaderNav = () => {
 	const [isBurgerOpen, setBurgerOpen] = useState(false)
 	const [isLoginOpen, setLoginOpen] = useState(false)
+
+	const burgerOpenClose = () => {
+		setBurgerOpen((isBurgerOpen) => !isBurgerOpen)
+	}
+
 	return (
 		<>
 			<div className={style.header}>
-				<BurgerIcon />
-				<Image
-					onClick={() => {
-						setBurgerOpen((isBurgerOpen) => !isBurgerOpen)
-					}}
-					src={burgerIcon}
-					alt='burger'
-					width='30'
-				/>
-				<Image src={logo} width='54' />
-				<Image
-					onClick={() => {
-						setLoginOpen((isLoginOpen) => !isLoginOpen)
-					}}
-					src={account}
-					alt='burger'
-					width='48'
-				/>
+				<div className={style.burgermenu}>
+					<BurgerIcon burgerOpenClose={burgerOpenClose} />
+				</div>
+				<div className={style.logo}>
+					<Image src={logo} />
+				</div>
+				<div className={style.loginmenu}>
+					<Image
+						onClick={() => {
+							setLoginOpen((isLoginOpen) => !isLoginOpen)
+						}}
+						src={account}
+						alt='burger'
+					/>
+				</div>
 			</div>
 			<div
 				className={

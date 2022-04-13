@@ -1,11 +1,20 @@
-import React from "react"
+import { useState } from "react"
 import style from "./HeaderNav.module.scss"
 
-export const BurgerIcon = () => {
+export const BurgerIcon = ({ burgerOpenClose }) => {
+	const [bugerOpen, setBugerOpen] = useState(false)
+
+	const burgerHandlerFn = () => {
+		setBugerOpen((state) => !state)
+		burgerOpenClose()
+	}
+
 	return (
-		<div className={style.burger__div}>
-			<div className={style.burger__one}></div>
-			<div className={style.burger__two}></div>
+		<div
+			onClick={burgerHandlerFn}
+			className={bugerOpen ? style.burger__div_opened : style.burger__div}
+		>
+			<div className={style.burger__lines}></div>
 		</div>
 	)
 }
