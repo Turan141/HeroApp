@@ -1,30 +1,52 @@
 .person__card {
-	@apply border-4 m-2 rounded-lg border-white shadow-2xl bg-secondary;
+	box-shadow: 5px 5px 15px 3px rgb(0, 0, 0);
+	@apply md:border-white relative md:h-80 border-4 m-4 rounded-lg bg-detail w-80 mx-auto md:w-auto;
 	&:hover {
+		box-shadow: 0 0 15px 1px rgb(3, 3, 3), 0 0 25px 5px rgb(255, 255, 255);
 		@apply shadow-white cursor-pointer  scale-110 transition-all z-10;
 	}
 }
 
+.rounded_avatar {
+	border-radius: 30%;
+	box-shadow: 0 0 20px 2px black;
+	@apply relative mt-10 md:mt-0 border-4 -top-14 -left-4  w-28 h-20   md:absolute md:top-16 md:left-12 border-t-stone-400 border-b-stone-400 md:border-4 md:w-32 md:h-32  border-gray-700;
+	&:hover {
+		@apply border-green-800 animate-pulse transition-all;
+	}
+}
+.char_avatar {
+	border-radius: 30%;
+	@apply md:absolute md:left-2;
+}
+
 .card_map {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
-	width: 100%;
-	margin: auto;
+	@apply grid grid-cols-1 grid-rows-2
+	md:grid-cols-3;
+}
+.person_info {
+	@apply md:absolute md:top-48  md:w-auto flex flex-col flex-wrap;
+	h1 {
+		@apply mx-auto  md:text-2xl md:tracking-wide font-bold antialiased;
+	}
+	h2 {
+		@apply mx-auto  md:text-lg md:tracking-wide font-bold antialiased;
+	}
+	.stat_div {
+		.card_stats {
+			@apply flex flex-row flex-wrap justify-center;
+			li {
+				@apply md:text-red md:ml-4 md:font-medium md:leading-5 text-sm;
+			}
+		}
+	}
 }
 
 .blur {
 	@apply blur-sm h-2;
 }
 
-// ul {
-// 	@apply flex justify-center flex-row w-fit flex-wrap md:flex-nowrap;
-// 	li {
-// 		@apply mx-auto border-2 ml-2 w-12 h-8 align-middle justify-center;
-// 		&:hover {
-// 			@apply bg-secondary transition-all;
-// 		}
-// 		a {
-// 			@apply mx-1 align-middle justify-center;
-// 		}
-// 	}
-// }
+.img {
+	box-shadow: 0 10px 30px 7px black;
+	@apply hidden md:block md:w-56 md:h-36;
+}

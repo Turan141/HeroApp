@@ -1,5 +1,6 @@
 .search_comp {
-	background: #e8c07d;
+	background: linear-gradient(to bottom right, #333333, #121212);
+	border: 30%;
 	@apply h-40 w-auto rounded-lg;
 	.search_panel {
 		@apply flex flex-row h-10  justify-center   w-auto;
