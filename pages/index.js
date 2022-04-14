@@ -1,8 +1,12 @@
+import { CardsMainWindow } from "../components/main-cards-window/card-list/CardsMainWindow"
+import store from "./redux-state/store"
+import { Provider } from "react-redux"
+
 const Home = ({ heroes }) => {
 	return (
-		<>
-			<h1>index</h1>
-		</>
+		<div>
+			<CardsMainWindow heroes={heroes} />
+		</div>
 	)
 }
 

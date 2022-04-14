@@ -1,0 +1,12 @@
+.paginate {
+	@apply mx-auto flex flex-row justify-center;
+	ul {
+		@apply w-full flex flex-row justify-center;
+		li {
+			@apply mx-auto border-2 bg-secondary w-14 h-8;
+			a {
+				@apply justify-center align-middle;
+			}
+		}
+	}
+}

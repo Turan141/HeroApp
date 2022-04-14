@@ -12,7 +12,9 @@ export const BurgerIcon = ({ burgerOpenClose }) => {
 	return (
 		<div
 			onClick={burgerHandlerFn}
-			className={bugerOpen ? style.burger__div_opened : style.burger__div}
+			className={
+				bugerOpen ? style.burger__div_opened : style.burger__div_closed
+			}
 		>
 			<div className={style.burger__lines}></div>
 		</div>

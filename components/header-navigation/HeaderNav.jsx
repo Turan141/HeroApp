@@ -1,20 +1,12 @@
 import React, { useState } from "react"
 import { BurgerMenu } from "./BurgerMenu"
-import { InputForm } from "./InputForm"
 import { BurgerIcon } from "./BurgerIcon"
+import { UserMenu } from "./UserMenu"
 
 import style from "./HeaderNav.module.scss"
 import Image from "next/image"
-import logo from "../../public/vectorpaint.svg"
+import logo from "../../public/punch.png"
 import account from "../../public/account.png"
-
-export const UserMenu = () => {
-	return (
-		<>
-			<InputForm />
-		</>
-	)
-}
 
 export const HeaderNav = () => {
 	const [isBurgerOpen, setBurgerOpen] = useState(false)
@@ -39,7 +31,7 @@ export const HeaderNav = () => {
 							setLoginOpen((isLoginOpen) => !isLoginOpen)
 						}}
 						src={account}
-						alt='burger'
+						alt='login'
 					/>
 				</div>
 			</div>

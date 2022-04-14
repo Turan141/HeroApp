@@ -1,0 +1,20 @@
+.search_comp {
+	background: #e8c07d;
+	@apply h-40 w-auto rounded-lg;
+	.search_panel {
+		@apply flex flex-row h-10  justify-center   w-auto;
+		.filter_name {
+			@apply border-4 bg-gray-700 text-center align-middle  text-neutral-200 border-darkGray w-screen text-sm leading-3 pt-1 items-center md:rounded-md md:w-48 md:text-lg md:leading-none md:pt-1.5 md:mr-0.5;
+		}
+		.filter_input {
+			@apply w-screen bg-gray-700 text-neutral-200 border-4 border-darkGray md:w-80 md:pl-2 md:mr-0.5 md:rounded-md;
+		}
+		.persona_filter_select {
+			@apply md:w-40 w-24 bg-gray-700 text-neutral-200 border-4 border-darkGray md:rounded-md;
+		}
+	}
+}
+
+.blank {
+	@apply h-24;
+}
