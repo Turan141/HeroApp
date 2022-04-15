@@ -1,11 +1,11 @@
 .paginate {
 	@apply mx-auto flex flex-row justify-center;
 	ul {
-		@apply w-full flex flex-row justify-center;
+		@apply w-full flex flex-row justify-center mt-10 h-14;
 		li {
-			@apply mx-auto border-2 bg-secondary w-14 h-8;
+			@apply md:mx-1 rounded  border-2 md:text-2xl font-bold bg-[#557571] w-16 h-8 text-center pb-10 ;
 			a {
-				@apply justify-center align-middle;
+				@apply justify-center align-middle ;
 			}
 		}
 	}
