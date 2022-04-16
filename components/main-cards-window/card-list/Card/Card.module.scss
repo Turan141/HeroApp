@@ -18,17 +18,20 @@
 .rounded_avatar {
 	border-radius: 30%;
 	box-shadow: 0 0 7px 5px black;
-	@apply  md:mt-0 border-4   w-28 h-28 border-[#888888] 
-	md:absolute md:top-16 md:left-16  md:w-32 md:h-32;
+	@apply md:mt-0 border-4   w-32 h-32 border-[#888888] 
+	md:absolute md:top-16 md:left-16  md:w-32 md:h-32 relative -top-3 -left-3 inline-block;
 	&:hover {
 		@apply border-blue-800 animate-pulse transition-all;
 	}
+
 }
 .char_avatar {
 	border-radius: 30%;
 	@apply md:absolute md:left-2;
 }
-
+.badge {
+	@apply  absolute left-56 top-3  md:left-44 md:top-0;
+}
 .card_map {
 	@apply md:mx-16 md:pt-12 grid 
 	md:grid-cols-3 md:max-w-4xl md:w-[100%] w-80 mx-auto;
@@ -36,25 +39,25 @@
 .person_info {
 	@apply md:mt-12  md:w-auto flex flex-col flex-wrap md:mx-auto;
 	h1 {
-		@apply mx-auto  md:text-2xl md:tracking-wide font-bold antialiased;
+		@apply mx-auto  md:text-2xl text-2xl md:tracking-wide font-bold antialiased mt-1;
 	}
 	h2 {
-		@apply mx-auto md:text-lg md:tracking-wide font-bold antialiased;
+		@apply mx-auto md:text-lg  text-xl md:tracking-wide font-bold antialiased md:mb-4;
 	}
 	.stat_div {
-		@apply mx-auto md:w-60;
+		@apply mx-auto md:w-60 md:-my-3 my-0.5;
 		.card_stats {
-			@apply md:my-0.5 flex flex-row flex-wrap justify-center;
+			@apply md:my-0 flex flex-row flex-wrap justify-center my-2;
 			.left_stat {
 				@apply p-0;
 				li {
-					@apply font-medium align-middle  border-2 bg-[#F9B208] rounded-md border-black md:my-1 md:p-0.5 md:text-sm;
+					@apply font-medium align-middle  border-2 bg-[#F9B208] rounded-md border-black md:my-1 md:p-0.5 md:text-sm my-1;
 				}
 			}
 			.right_stat {
 				@apply p-0;
 				li {
-					@apply font-medium align-middle ml-3 border-2 bg-[#F9B208] rounded-md md:p-0.5 border-black md:my-1  md:text-sm;
+					@apply font-medium align-middle ml-3 border-2 bg-[#F9B208] rounded-md md:p-0.5 border-black md:my-1  md:text-sm my-1;
 				}
 			}
 		}

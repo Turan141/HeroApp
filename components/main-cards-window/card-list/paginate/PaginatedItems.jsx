@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ReactPaginate from "react-paginate"
-import { Card } from '../card/Card'
+import { Card } from "../card/Card"
 import { useGetCharactersQuery } from "../../../../redux-state/query"
 
 import style from "./Paginate.module.scss"

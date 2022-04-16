@@ -6,12 +6,43 @@ import intelligence from "../../../../public/svg/bulb-svgrepo-com.svg"
 import fight from "../../../../public/svg/fight-svgrepo-com.svg"
 import force from "../../../../public/svg/lightning-svgrepo-com.svg"
 import durability from "../../../../public/svg/power-svgrepo-com.svg"
+import easy from "../../../../public/svg/ranks/easy.svg"
+import easymedium from "../../../../public/svg/ranks/easymedium.svg"
+import medium from "../../../../public/svg/ranks/medium.svg"
+import mediumhigh from "../../../../public/svg/ranks/mediumhigh.svg"
+import high from "../../../../public/svg/ranks/high.svg"
 
 import style from "./Card.module.scss"
 
 export function Card({ currentItems, isLoading, error }) {
 	const HEIGHT = "20px"
 	const WIDTH = "20px"
+
+	const getAvrgScore = (arg) => {
+		let avrgScore =
+			(arg.powerstats.strength +
+				arg.powerstats.intelligence +
+				arg.powerstats.speed +
+				arg.powerstats.durability +
+				arg.powerstats.power +
+				arg.powerstats.combat) /
+			6
+		if (avrgScore <= 20) {
+			return easy
+		}
+		if (avrgScore <= 40) {
+			return easymedium
+		}
+		if (avrgScore <= 60) {
+			return medium
+		}
+		if (avrgScore <= 80) {
+			return mediumhigh
+		}
+		if (avrgScore > 80) {
+			return high
+		}
+	}
 
 	const map = currentItems ? (
 		currentItems.map((item) => (
@@ -30,6 +61,13 @@ export function Card({ currentItems, isLoading, error }) {
 						src={item.images.sm}
 						width='150px'
 						height='150px'
+					/>
+				</div>
+				<div className={style.badge}>
+					<Image
+						src={getAvrgScore(item)}
+						width='70px'
+						height='70px'
 					/>
 				</div>
 				<div className={style.person_info}>
