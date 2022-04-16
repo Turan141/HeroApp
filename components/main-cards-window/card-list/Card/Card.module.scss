@@ -48,49 +48,44 @@
 	.stat_div {
 		@apply mx-auto md:w-60;
 		.card_stats {
-			@apply md:my-0 flex flex-row flex-wrap justify-center;
+			@apply md:my-0.5 flex flex-row flex-wrap justify-center;
 			.left_stat {
 				@apply p-0;
 				li {
-					@apply font-medium align-middle  border-2 bg-[#5F7464] rounded-md border-black md:my-1 md:p-0.5 md:text-sm;
+					@apply font-medium align-middle  border-2 bg-[#F9B208] rounded-md border-black md:my-1 md:p-0.5 md:text-sm;
 				}
 			}
 			.right_stat {
 				@apply p-0;
 				li {
-					@apply font-medium align-middle ml-3 border-2 bg-[#5F7464] rounded-md md:p-0.5 border-black md:my-1  md:text-sm;
+					@apply font-medium align-middle ml-3 border-2 bg-[#F9B208] rounded-md md:p-0.5 border-black md:my-1  md:text-sm;
 				}
 			}
 		}
 	}
 }
 
-#good__speed{
-  box-shadow: 0 0 10px 2px #FFD93D;
-  background-color: #FFD93D;
-}
-#good__fight{
-  box-shadow: 0 -5px 10px 2px #B20600;
-  background-color: #B20600;
-}
-#good__durability{
-  box-shadow: 0 -5px 10px 2px #035397;
-  background-color: #035397;
-}
-#good__intellect{
-  box-shadow: 0 -5px 10px 2px #8FBDD3;
-  background-color: #8FBDD3;
-}
-#good__power{
-  box-shadow: 0 -5px 10px 2px #733C3C;
-  background-color: #733C3C;
-}
-#good__strength{
-  box-shadow: 0 -5px 10px 2px #9900F0;
-  background-color: #9900F0;
+#good__power,
+#good__strength,
+#good__intellect,
+#good__durability,
+#good__fight,
+#good__speed {
+	box-shadow: 0 -5px 10px 2px #06ff00;
+	background-color: #06ff00;
+	border-color: white;
+	animation: max-level 1s infinite;
+	@keyframes max-level {
+		0%   {top: 0px;}
+  25%  {top: 200px;}
+  50%  {top: 100px;}
+  75%  {top: 200px;}
+  100% {top: 0px;}
+	}
 }
 
-#low__stat{
-  background-color: gray;
-
+#low__stat {
+	background-color: #eeeeee;
+	border: 2px dotted;
+	@apply animate-pulse;
 }
