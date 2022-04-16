@@ -1,6 +1,6 @@
 .person__card {
 	box-shadow: 5px 5px 15px 3px rgb(0, 0, 0);
-	@apply md:border-white relative  md:h-96 border-4 m-4  rounded-lg bg-[#DDDDDD] md:w-64;
+	@apply md:border-white relative  md:h-96 border-4 md:m-4 my-3  rounded-lg bg-[#DDDDDD] md:w-64;
 	&:hover {
 		box-shadow: 0 0 5px 4px rgb(3, 3, 3),
 			0 0 2px 5px rgb(255, 255, 255);
@@ -18,7 +18,7 @@
 .rounded_avatar {
 	border-radius: 30%;
 	box-shadow: 0 0 7px 5px black;
-	@apply relative md:mt-0 border-4 -top-14 -left-4  w-28 h-20 border-[#888888] 
+	@apply  md:mt-0 border-4   w-28 h-28 border-[#888888] 
 	md:absolute md:top-16 md:left-16  md:w-32 md:h-32;
 	&:hover {
 		@apply border-blue-800 animate-pulse transition-all;
@@ -30,12 +30,8 @@
 }
 
 .card_map {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-
-	@apply mx-16 pt-12;
-	// @apply grid grid-cols-1 grid-rows-2
-	// md:grid-cols-4;
+	@apply md:mx-16 md:pt-12 grid 
+	md:grid-cols-3 md:max-w-4xl md:w-[100%] w-80 mx-auto;
 }
 .person_info {
 	@apply md:mt-12  md:w-auto flex flex-col flex-wrap md:mx-auto;
@@ -76,11 +72,21 @@
 	border-color: white;
 	animation: max-level 1s infinite;
 	@keyframes max-level {
-		0%   {top: 0px;}
-  25%  {top: 200px;}
-  50%  {top: 100px;}
-  75%  {top: 200px;}
-  100% {top: 0px;}
+		0% {
+			top: 0px;
+		}
+		25% {
+			top: 200px;
+		}
+		50% {
+			top: 100px;
+		}
+		75% {
+			top: 200px;
+		}
+		100% {
+			top: 0px;
+		}
 	}
 }
 
