@@ -11,6 +11,7 @@ import easymedium from "../../../../public/svg/ranks/easymedium.svg"
 import medium from "../../../../public/svg/ranks/medium.svg"
 import mediumhigh from "../../../../public/svg/ranks/mediumhigh.svg"
 import high from "../../../../public/svg/ranks/high.svg"
+import elite from "../../../../public/svg/ranks/elite.svg"
 
 import style from "./Card.module.scss"
 
@@ -30,17 +31,49 @@ export function Card({ currentItems, isLoading, error }) {
 		if (avrgScore <= 20) {
 			return easy
 		}
-		if (avrgScore <= 40) {
+		if (avrgScore > 20 && avrgScore <= 40) {
 			return easymedium
 		}
-		if (avrgScore <= 60) {
+		if (avrgScore > 40 && avrgScore <= 60) {
 			return medium
 		}
-		if (avrgScore <= 80) {
+		if (avrgScore > 60 && avrgScore <= 80) {
 			return mediumhigh
 		}
-		if (avrgScore > 80) {
+		if (avrgScore > 80 && avrgScore < 90) {
 			return high
+		}
+		if (avrgScore >= 90) {
+			return elite
+		}
+	}
+
+	const getAvrgRank = (arg) => {
+		let avrgScore =
+			(arg.powerstats.strength +
+				arg.powerstats.intelligence +
+				arg.powerstats.speed +
+				arg.powerstats.durability +
+				arg.powerstats.power +
+				arg.powerstats.combat) /
+			6
+		if (avrgScore <= 20) {
+			return "Rank D"
+		}
+		if (avrgScore > 20 && avrgScore <= 40) {
+			return "Rank C"
+		}
+		if (avrgScore > 40 && avrgScore <= 60) {
+			return "Rank B"
+		}
+		if (avrgScore > 60 && avrgScore <= 80) {
+			return "Rank A"
+		}
+		if (avrgScore > 80 && avrgScore < 90) {
+			return "Rank S"
+		}
+		if (avrgScore >= 90) {
+			return "Rank S+"
 		}
 	}
 
@@ -69,6 +102,7 @@ export function Card({ currentItems, isLoading, error }) {
 						width='70px'
 						height='70px'
 					/>
+					<h2 className={style.rank}>{getAvrgRank(item)}</h2>
 				</div>
 				<div className={style.person_info}>
 					<h1>{item.name}</h1>

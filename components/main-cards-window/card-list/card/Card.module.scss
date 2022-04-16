@@ -32,6 +32,9 @@
 .badge {
 	@apply  absolute left-56 top-3  md:left-44 md:top-0;
 }
+.rank{
+	@apply text-xl md:text-base font-semibold md:ml-2.5 md:text-1 md:-mt-4;
+}
 .card_map {
 	@apply md:mx-16 md:pt-12 grid 
 	md:grid-cols-3 md:max-w-4xl md:w-[100%] w-80 mx-auto;
@@ -73,24 +76,24 @@
 	box-shadow: 0 -5px 10px 2px #06ff00;
 	background-color: #06ff00;
 	border-color: white;
-	animation: max-level 1s infinite;
-	@keyframes max-level {
-		0% {
-			top: 0px;
-		}
-		25% {
-			top: 200px;
-		}
-		50% {
-			top: 100px;
-		}
-		75% {
-			top: 200px;
-		}
-		100% {
-			top: 0px;
-		}
-	}
+	// animation: max-level 1s infinite;
+	// @keyframes max-level {
+	// 	0% {
+	// 		top: 0px;
+	// 	}
+	// 	25% {
+	// 		top: 200px;
+	// 	}
+	// 	50% {
+	// 		top: 100px;
+	// 	}
+	// 	75% {
+	// 		top: 200px;
+	// 	}
+	// 	100% {
+	// 		top: 0px;
+	// 	}
+	// }
 }
 
 #low__stat {
