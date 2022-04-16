@@ -6,7 +6,7 @@ import { UserMenu } from "./UserMenu"
 import style from "./HeaderNav.module.scss"
 import Image from "next/image"
 import logo from "../../public/punch.png"
-import account from "../../public/account.png"
+import account from "../../public/account.svg"
 
 export const HeaderNav = () => {
 	const [isBurgerOpen, setBurgerOpen] = useState(false)

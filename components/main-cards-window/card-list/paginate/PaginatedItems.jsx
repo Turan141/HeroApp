@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import ReactPaginate from "react-paginate"
 import { Card } from "../card/Card"
+
 import { useGetCharactersQuery } from "../../../../redux-state/query"
 
 import style from "./Paginate.module.scss"
@@ -15,8 +16,10 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 
 	useEffect(() => {
 		const endOffset = itemOffset + itemsPerPage
-		data && setCurrentItems(data.slice(itemOffset, endOffset))
-		data && setPageCount(Math.ceil(data.length / itemsPerPage))
+		data &&
+			setCurrentItems(data.slice(itemOffset, endOffset))
+		data &&
+			setPageCount(Math.ceil(data.length / itemsPerPage))
 	}, [itemOffset, itemsPerPage, data])
 
 	const handlePageClick = (event) => {
