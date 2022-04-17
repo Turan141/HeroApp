@@ -23,16 +23,15 @@
 	&:hover {
 		@apply border-blue-800 animate-pulse transition-all;
 	}
-
 }
 .char_avatar {
 	border-radius: 30%;
 	@apply md:absolute md:left-2;
 }
 .badge {
-	@apply  absolute left-56 top-3  md:left-44 md:top-0;
+	@apply absolute left-56 top-3  md:left-44 md:top-0;
 }
-.rank{
+.rank {
 	@apply text-xl md:text-base font-semibold md:ml-2.5 md:text-1 md:-mt-4;
 }
 .card_map {
@@ -100,4 +99,8 @@
 	background-color: #eeeeee;
 	border: 2px dotted;
 	@apply animate-pulse;
+}
+
+.spinner {
+	@apply w-8 animate-spin;
 }

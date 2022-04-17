@@ -13,7 +13,7 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 
 	const { data, isLoading, error } =
 		useGetCharactersQuery("all")
-
+console.log(data)
 	useEffect(() => {
 		const endOffset = itemOffset + itemsPerPage
 		data &&
