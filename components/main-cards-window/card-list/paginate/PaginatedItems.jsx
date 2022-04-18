@@ -10,21 +10,49 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 	const [currentItems, setCurrentItems] = useState(null)
 	const [pageCount, setPageCount] = useState(0)
 	const [itemOffset, setItemOffset] = useState(0)
+	const [charactersFromStorage, setCharacters] = useState(
+		[]
+	)
 
-	const { data, isLoading, error } =
+	const { data, isLoading, isSuccess, isError, error } =
 		useGetCharactersQuery("all")
-console.log(data)
+
 	useEffect(() => {
 		const endOffset = itemOffset + itemsPerPage
-		data &&
-			setCurrentItems(data.slice(itemOffset, endOffset))
-		data &&
-			setPageCount(Math.ceil(data.length / itemsPerPage))
-	}, [itemOffset, itemsPerPage, data])
+
+		if (!localStorage.getItem("characters")) {
+			localStorage.setItem(
+				"characters",
+				JSON.stringify(data)
+			)
+		}
+
+		if (isSuccess) {
+			setCharacters(
+				JSON.parse(localStorage.getItem("characters"))
+			)
+
+			setCurrentItems(
+				charactersFromStorage.slice(itemOffset, endOffset)
+			)
+
+			setPageCount(
+				Math.ceil(
+					charactersFromStorage.length / itemsPerPage
+				)
+			)
+		}
+	}, [
+		itemOffset,
+		itemsPerPage,
+		isSuccess,
+		charactersFromStorage,
+	])
 
 	const handlePageClick = (event) => {
 		const newOffset =
-			(event.selected * itemsPerPage) % data.length
+			(event.selected * itemsPerPage) %
+			charactersFromStorage.length
 		setItemOffset(newOffset)
 	}
 

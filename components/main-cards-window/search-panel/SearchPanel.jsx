@@ -1,56 +1,47 @@
-import { useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useState, useMemo, useEffect } from "react"
+import { sortByMaxRankHandler } from "../../assets/functions/get-most-valuable"
+import { sortByMinRankHandler } from "../../assets/functions/get-weakest"
+import { sortByFemale } from "../../assets/functions/get-womens"
+import { sortByMale } from "../../assets/functions/get-mans"
+
 import style from "./SearchPanel.module.scss"
 
 export const SearchPanel = () => {
-	const [filterType, setFilterType] = useState("All Heroes")
-	const dispatch = useDispatch()
+	let charsList
+	let reservState
 
-	const chars = useSelector((state) => state.chars)
+	useEffect(() => {
+		charsList = JSON.parse(
+			localStorage.getItem("characters")
+		)
+		reservState = JSON.parse(JSON.stringify(charsList))
+	}, [])
 
+	console.log(reservState)
 
-	// const sortByRankHandler = () => {
-	// 	data.slice().sort(function (a, b) {
-	// 		if (
-	// 			(a.powerstats.strength +
-	// 				a.powerstats.intelligence +
-	// 				a.powerstats.speed +
-	// 				a.powerstats.durability +
-	// 				a.powerstats.power +
-	// 				a.powerstats.combat) /
-	// 				6 >
-	// 			(b.powerstats.strength +
-	// 				b.powerstats.intelligence +
-	// 				b.powerstats.speed +
-	// 				b.powerstats.durability +
-	// 				b.powerstats.power +
-	// 				b.powerstats.combat) /
-	// 				6
-	// 		) {
-	// 			return 1
-	// 		}
-	// 		if (
-	// 			(a.powerstats.strength +
-	// 				a.powerstats.intelligence +
-	// 				a.powerstats.speed +
-	// 				a.powerstats.durability +
-	// 				a.powerstats.power +
-	// 				a.powerstats.combat) /
-	// 				6 <
-	// 			(b.powerstats.strength +
-	// 				b.powerstats.intelligence +
-	// 				b.powerstats.speed +
-	// 				b.powerstats.durability +
-	// 				b.powerstats.power +
-	// 				b.powerstats.combat) /
-	// 				6
-	// 		) {
-	// 			return -1
-	// 		}
-	// 		return 0
-	// 	})
-	// 	console.log(data)
-	// }
+	// useEffect(() => {
+	// 	setReservState(JSON.parse(JSON.stringify(charsList)))
+	// 	console.log(reservState)
+	// }, [charsList])
+
+	const filterChangeHandler = (e) => {
+		localStorage.setItem(
+			"characters",
+			JSON.stringify(reservState)
+		)
+		if (e.target.value === "max-rank") {
+			sortByMaxRankHandler(charsList)
+		}
+		if (e.target.value === "min-rank") {
+			sortByMinRankHandler(charsList)
+		}
+		if (e.target.value === "female") {
+			sortByFemale(charsList)
+		}
+		if (e.target.value === "male") {
+			sortByMale(charsList)
+		}
+	}
 
 	return (
 		<div className={style.search_comp}>
@@ -65,13 +56,14 @@ export const SearchPanel = () => {
 					type='text'
 				/>
 				<select
-					onChange={sortByRankHandler}
+					onChange={filterChangeHandler}
 					className={style.persona_filter_select}
 				>
 					<option>All Heroes</option>
-					<option>Most Powerful</option>
-					<option>Male</option>
-					<option>Female</option>
+					<option value='max-rank'>Most Powerful</option>
+					<option value='min-rank'>Most Weakests</option>
+					<option value='female'>Female</option>
+					<option value='male'>Male</option>
 				</select>
 			</div>
 		</div>
