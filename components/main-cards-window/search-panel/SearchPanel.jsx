@@ -15,9 +15,13 @@ export const SearchPanel = () => {
 		charsList = JSON.parse(
 			localStorage.getItem("characters")
 		)
-		reservState = JSON.parse(JSON.stringify(charsList))
-	}, [])
+	}, [charsList])
 
+	useEffect(() => {
+		if (charsList) {
+			reservState = JSON.parse(JSON.stringify(charsList))
+		}
+	}, [charsList])
 
 	// useEffect(() => {
 	// 	setReservState(JSON.parse(JSON.stringify(charsList)))
@@ -43,8 +47,6 @@ export const SearchPanel = () => {
 		}
 	}
 
-
-
 	return (
 		<div className={style.search_comp}>
 			<div className={style.blank}></div>
@@ -56,7 +58,9 @@ export const SearchPanel = () => {
 					placeholder='Search for character'
 					className={style.filter_input}
 					type='text'
-					onInput={(input)=>{searchFilter(charsList, input)}}
+					onInput={(input) => {
+						searchFilter(charsList, input)
+					}}
 				/>
 				<select
 					onChange={filterChangeHandler}
