@@ -18,7 +18,6 @@ export const SearchPanel = () => {
 		reservState = JSON.parse(JSON.stringify(charsList))
 	}, [])
 
-	console.log(reservState)
 
 	// useEffect(() => {
 	// 	setReservState(JSON.parse(JSON.stringify(charsList)))

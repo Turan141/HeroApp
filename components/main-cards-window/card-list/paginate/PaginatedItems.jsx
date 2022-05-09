@@ -17,20 +17,26 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 	const { data, isLoading, isSuccess, isError, error } =
 		useGetCharactersQuery("all")
 
-	useEffect(() => {
-		const endOffset = itemOffset + itemsPerPage
-
-		if (!localStorage.getItem("characters")) {
+		useEffect(() => {
 			localStorage.setItem(
 				"characters",
 				JSON.stringify(data)
 			)
-		}
+		}, [isSuccess, data, isLoading])
+		
+
+	useEffect(() => {
+		const endOffset = itemOffset + itemsPerPage
+
 
 		if (isSuccess) {
-			setCharacters(
-				JSON.parse(localStorage.getItem("characters"))
-			)
+			try {
+				setCharacters(
+					JSON.parse(localStorage.getItem("characters"))
+				)
+			} catch (err) {
+				console.log("Error: ", err.message)
+			}
 
 			setCurrentItems(
 				charactersFromStorage.slice(itemOffset, endOffset)
@@ -43,6 +49,8 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 			)
 		}
 	}, [
+		data,
+		isLoading,
 		itemOffset,
 		itemsPerPage,
 		isSuccess,
@@ -62,6 +70,7 @@ export const PaginatedItems = ({ itemsPerPage }) => {
 				currentItems={currentItems}
 				isLoading={isLoading}
 				error={error}
+				draggable={true}
 			/>
 			<div className={style.paginate}>
 				<ReactPaginate
