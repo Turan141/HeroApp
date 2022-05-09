@@ -1,6 +1,6 @@
 export const searchFilter = (arg, input) => {
 	let charsList = arg.filter((elem) => {
-		return elem.name.includes(input)
+		return elem.name.toLowerCase().includes(input.target.value)
 	})
 	localStorage.setItem(
 		"characters",

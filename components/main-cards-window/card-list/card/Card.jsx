@@ -79,7 +79,11 @@ export function Card({ currentItems, isLoading, error }) {
 
 	const map = currentItems ? (
 		currentItems.map((item) => (
-			<div key={item.id} className={style.person__card}>
+			<div
+				key={item.id}
+				className={style.person__card}
+				draggable={true}
+			>
 				<div className={style.img}>
 					<Image
 						className={style.blur}
